@@ -18,6 +18,17 @@ $(document).ready(function(){
 		navText: ["", ""]
 	});
 
+	$('#foo2').owlCarousel({
+		loop:false,
+		nav: true,
+		margin: 20,
+		dots: true,
+		items:3,
+		navText: ["", ""],
+		navContainer : '.owl_pagination2 .owl-nav',
+		dotsContainer : '.owl_pagination2 .owl-dots',
+	});
+
 });
 
 // =заглушка для IE

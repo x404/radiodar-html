@@ -12,6 +12,8 @@
 
 
 
+
+
 #foo1{
 	.slide{
 		background-size: cover;
@@ -137,6 +139,144 @@
 	}
 }
 
+
+#foo2{
+	border-top: 8px solid $color4;
+	.item{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 2.5rem;
+		text-decoration: none;
+		width: 90%;
+
+		img{
+			width: 100%;
+		}
+	}
+	h4,
+	.category{
+	}
+	.head{
+		a{
+			@extend .tdu;
+		}
+		h4{
+
+		}
+		.category{
+			@extend .italic;
+			color: $color7;
+		}
+	}
+
+	img{
+		vertical-align: top;
+		border: 1px solid $color4;
+		margin-top: .5rem;
+	}
+
+	.bottom{
+		background-color: $color4;
+		.price{
+			@include font-size(1.8);
+			@include flexbox;
+			@include align-items(center);
+			text-decoration: none;
+			height: 4rem;
+			padding-left: 1.5rem;
+			strong{
+				margin-right: .3rem;
+			}
+		}
+	}
+}
+
+
+.owl_pagination{
+}
+
+.owl_pagination2{
+	text-align: right;
+	.owl_pagination_container{
+		padding: 0 56px;
+		display: inline-block;
+		position: relative;
+		text-align: center;
+	}
+	.owl-dots {
+		counter-reset: dots;
+		text-align: right;
+		margin-right: 1rem;
+	}
+	.owl-dot{
+		display: inline-block;
+		position: relative;
+		width: 14px;
+		&:before {
+			color: $color7;
+			content: counter(dots);
+			counter-increment:dots;
+			left: 0;
+			position: absolute;
+			text-align: center;
+			text-decoration: underline;
+			top: 11px;
+			width: 100%;
+			cursor: pointer;
+		}
+
+		&.active:before{
+			color: $color5;
+		}
+		&:hover{
+			&:before{
+				color: $color1;
+				text-decoration: none;				
+			}
+		}
+	}
+
+	.owl-nav{
+		left: 0;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		width: 100%;
+
+		.owl-prev,
+		.owl-next{
+			background-color: $color10;
+			border-radius: 50%;
+			cursor: pointer;
+			height: 31px;
+			position: absolute;
+			top: 16px;
+			width: 31px;
+			@include transition-param(background-color);
+			&:hover{
+				background-color: #e88383;
+			}
+			&:before{
+				@extend .before;
+				height: 13px;
+				width: 8px;
+				left: 10px;
+				top: 9px;
+				background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAANCAQAAAA+y+ezAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfhBBIVODrVIl+BAAAAOklEQVQI132OMRIAIAzCAv//cx3UWhY7kRy9Q8W4QqqJgBORE2+jcYuB4ETwifUEqTweYkerz9Ld0gJa8Q8VOp8xugAAAABJRU5ErkJggg==") no-repeat ;
+			}
+			&.disabled{
+				background-color: $color10;
+			}
+		}
+
+		.owl-next{
+			right: 15px;
+			@include rotation(180deg);
+		}
+	}
+}
+
 /* =assortment
 ---------------------------*/
 .assortment{
@@ -209,12 +349,10 @@
 ---------------------------*/
 .aside-content{
 	padding-top: 2rem;
-	.box{
-
-	}
 	aside{
 		margin-right: 4.2rem;
-		width: 24rem;
+		flex-basis: 24rem;
+		flex-shrink: 0;
 		.menu{
 			.topcat{
 				@extend .semibold;
@@ -350,6 +488,7 @@
 	}
 	.content{
 		flex-grow: 1;
+		max-width: 888px;
 	}
 
 	.title{
