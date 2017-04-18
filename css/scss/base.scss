@@ -1,0 +1,640 @@
+/*** reset ***********/
+html,body,ul,ol,li,dl,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,a,img,label{margin:0;padding:0;border:0}
+header, section, footer, aside, nav, article {display:block}
+ul{list-style:none}
+$color1:#000;
+$color2:#fff;
+$color3:#d00606;
+$color4:#f2f2f2;
+$color5:#d10707;
+$color6:#888d90;
+$color7:#888c8f;
+
+$color8:#292929;
+
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%
+}
+
+
+body{
+	// @include flexbox;
+	// flex-flow: column;
+	// font-display: swap;
+	// height: 100vh;
+	// font-size:10px;
+	// font-size: 1.4rem;
+
+	font-family: "MyriadProRegular", Arial;
+	@include font-size(1.4);
+	color: $color1;
+}
+
+html, body{
+	height: 100%
+}
+
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	//ie11
+}
+
+
+
+*:focus{outline:none}
+
+input::-moz-focus-inner{
+	border: 0;
+	padding: 0;
+}
+
+
+@supports (display: grid) {
+	.grid-container{
+		display: grid;
+		grid-template-areas: 
+			"top"
+			"header"
+			"nav"
+			"main"
+			"footer";
+		grid-template-columns: 1fr;
+		grid-template-rows: 40px min-content min-content auto 65px;
+		min-height: 100%;
+	}
+}
+
+
+
+.top{
+	grid-area: top;
+}
+
+header{
+	grid-area: header;
+}
+
+nav{
+	grid-area: nav;
+}
+
+
+.main{
+	grid-area: main;
+}
+
+footer{
+	grid-area: footer;
+}
+
+
+/*** standart classes *****/
+p{line-height:1.4}
+a{
+	color:#020000;
+	@include transition-param(color);
+}
+h1, .title{font-size:2.4rem}
+h2{font-size:2.4rem}
+h3{font-size:1.6rem}
+
+.color{
+	color: $color5;
+}
+
+*:focus{outline:none}
+
+input::-moz-focus-inner{
+	border: 0;
+	padding: 0;
+}
+
+strong{
+	font-weight: normal;
+	@extend .semibold;
+}
+
+@font-face {
+	font-family: "MyriadProRegular";
+	src: url("../fonts/MyriadProRegular/MyriadProRegular.woff") format("woff"),
+	url("../fonts/MyriadProRegular/MyriadProRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+.regular{font-family: "MyriadProRegular";}
+
+
+@font-face {
+	font-family: 'MyriadProLight';
+	src: url('../fonts/MyriadPro-Light/MyriadProLight.woff2') format('woff2'),
+		 url('../fonts/MyriadPro-Light/MyriadProLight.woff') format('woff'),
+		 url('../fonts/MyriadPro-Light/MyriadProLight.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 300;
+}
+
+.regularlight{font-family: "MyriadProLight";}
+
+
+@font-face {
+	font-family: 'MyriadProLightExt';
+	src: url('../fonts/MyriadPro-LightSemiExt.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 300;
+}
+
+.regularlightext{font-family: "MyriadProLightExt";}
+
+
+
+/* font-family: "MyriadProBold"; */
+@font-face {
+	font-family: "MyriadProBold";
+	src: url("../fonts/MyriadProBold/MyriadProBold.woff") format("woff"),
+	url("../fonts/MyriadProBold/MyriadProBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+.myriadbold{
+	font-family: "MyriadProBold";
+}
+
+/* font-family: "MyriadProItalic"; */
+@font-face {
+	font-family: "MyriadProItalic";
+	src: url("../fonts/MyriadProItalic/MyriadProItalic.woff") format("woff"),
+	url("../fonts/MyriadProItalic/MyriadProItalic.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+.italic{
+	font-family: "MyriadProItalic";
+}
+
+/* font-family: "MyriadProSemiBold"; */
+@font-face {
+	font-family: "MyriadProSemiBold";
+	src: url("../fonts/MyriadProSemiBold/MyriadProSemiBold.woff") format("woff"),
+	url("../fonts/MyriadProSemiBold/MyriadProSemiBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+.semibold{
+	font-family: "MyriadProSemiBold";
+}
+
+/* font-family: "MyriadProBoldItalic"; */
+@font-face {
+	font-family: "MyriadProBoldItalic";
+	src: url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.woff") format("woff"),
+	url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+/* font-family: "MyriadProSemiBoldItalic"; */
+@font-face {
+	font-family: "MyriadProSemiBoldItalic";
+	src: url("../fonts/MyriadProSemiBoldItalic/MyriadProSemiBoldItalic.woff") format("woff"),
+	url("../fonts/MyriadProSemiBoldItalic/MyriadProSemiBoldItalic.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+	
+
+.tdn{
+	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+.tdu{
+	text-decoration: underline;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+
+@mixin sprite($x:0, $y:0){
+	background-image: url(../images/sprite.png);
+	background-repeat: no-repeat;
+	background-position: $x $y;
+}
+
+.before{
+	content: "";
+	display: block;
+	position: absolute;
+}
+
+
+.form-control {
+	// font-size: 16px;
+	&:focus,
+	&:active{
+		// border-color: $color5;
+		// box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(222, 72, 111, 0.3)
+	}
+}
+
+
+.top{
+	background-color: $color4;
+	padding: 1rem 0; 
+}
+
+
+.flexbox{
+	@include flexbox;
+}
+
+.submit{
+	cursor: pointer;
+}
+
+/* =header
+---------------------------*/
+header{
+	padding: 1.5rem 0 2.5rem;
+	.flexbox{
+		@include justify-content(space-between);
+	}
+	.logo{
+		padding-left: 2.5rem;
+		&_link{
+			display: block;
+		}
+
+		.tel-email{
+			margin-left: 3.5rem;
+			text-align: right;
+			width: 16rem;
+		}
+		.tel{
+			text-decoration: none;
+			@include font-size(1.8);
+			@extend .myriadbold;
+		}
+		.email{
+			color: $color5;
+		}
+	}
+	.links-search{
+		padding-top: 2rem;
+		width: 36rem;
+		.links{
+			a{
+				@extend .semibold;
+				@extend .tdu;
+				display: inline-block;
+				margin-right: 1.8rem;
+				position: relative;
+				&:last-child{
+					margin-right: 0;
+				}
+				&:before{
+					@include sprite();
+					@extend .before;
+					bottom: 0;
+				}
+			}
+
+			.link-address{
+				padding-left: 30px;
+				&:before{
+					background-position: 0 -45px ;
+					height: 28px;
+					width: 20px;
+					left: 0;
+				}
+			}
+
+			.link-delivery{
+				padding-left: 42px;
+				&:before{
+					background-position: -21px -45px;
+					height: 28px;
+					width: 28px;
+					left: 0;
+				}
+			}
+
+
+			.link-payment{
+				padding-left: 37px;
+				&:before{
+					background-position: -50px -45px;
+					height: 23px;
+					width: 24px;
+					left: 0;
+				}
+			}
+
+		}
+		.qsearch{
+			margin-top: 3rem;
+			fieldset{
+				// @include flexbox;
+			}
+			input{
+				float: left;
+				vertical-align: top;
+				height: 3.8rem;				
+			}
+			#search{
+				@extend .italic;
+				background-color: $color4;
+				border: none;
+				padding-left: 1.5rem;
+				padding-right: 1.5rem;
+				width: calc(100% - 41px);
+			}
+			.submit{
+				@include sprite(10px, 4px);
+				background-color: transparent;
+				border: none;
+				cursor: pointer;
+				width: 41px;
+			}
+		}
+	}
+
+
+	.right{
+		@include flexbox;
+		@include justify-content(space-between);
+		flex-direction: column;
+		width: 16rem;
+		a{
+			display: block;
+			height: 4rem;
+			text-decoration: none;
+			white-space: nowrap;
+		}
+
+		#cart{
+			@include font-size(1.8);
+			background-color: $color6;
+			color: $color2;
+			display: block;
+			height: 4rem;
+			padding-left: 1.5rem;
+			padding-top: .8rem;
+			position: relative;
+			text-align: center;
+			&:before{
+				@extend .before;
+				@include sprite(-61px, 0);
+				height: 21px;
+				left: 8px;
+				top: 9px;
+				width: 24px;
+			}
+		}
+
+		.link-feedback{
+			color: $color2;
+			background-color: $color3;
+			display: block;
+			padding-left: 4.5rem;
+			padding-top: 1.2rem;
+			position: relative;
+			&:before{
+				@include sprite(-32px, 0);
+				@extend .before;
+				height: 22px;
+				left: 7px;
+				top: 9px;
+				width: 27px;
+			}
+		}
+	}
+}
+
+/* =/header
+---------------------------*/
+
+
+
+/* =nav
+---------------------------*/
+nav{
+	@include font-size(1.3);
+	@extend .semibold;
+
+	ul{
+		background-color: $color4;
+		@include flexbox;
+		@include justify-content(space-between);
+		a{
+			@include flexbox;
+			@include align-items(center);
+			height: 4rem;
+			text-decoration: none;
+		}
+		& > li{
+			padding: 0 2.5rem;
+			text-transform: uppercase;
+		}
+		li{
+			& > ul{
+				display: none;
+			}
+		}
+	}
+}
+/* =/nav
+---------------------------*/
+
+
+.owl-carousel{
+	.owl-controls{
+		position: absolute;
+		width: 100%;
+		top: 115px;
+		.owl-buttons{
+			.owl-prev,
+			.owl-next{
+				background: url(../images/prevnext.png) no-repeat left top;
+				width: 65px;
+				height: 65px;
+				position: absolute;
+			}
+			.owl-prev{
+				left: -110px;
+			}
+			.owl-next{
+				@include sprite;
+				// .rotation(180deg);
+				right: -110px;
+			}
+		}
+	}
+}
+
+/* =main
+---------------------------*/
+
+
+
+
+
+/* =menu
+---------------------------*/
+.bottom_menu{
+	@include font-size(1.3);
+	@extend .semibold;
+	background-color: $color4;
+	ul{
+		text-transform: uppercase;
+		@include flexbox;
+		@include justify-content(space-between);
+		li{
+			&.active{
+				a, 
+				span{
+					background-color: $color2;
+					color: $color5;	
+				}
+			}
+			a{
+				@include flexbox;
+				@include align-items(center);
+				transition: color .3s, background-color .3s;
+				height: 4rem;
+				padding: 0 2.7rem;
+
+				text-decoration: none;
+				&:hover{
+					background-color: $color2;
+					color: $color5;
+				}
+			}
+		}
+	}
+}
+/* =/menu
+---------------------------*/
+
+
+.contacts,
+main
+{
+	p{
+		margin: 1.2rem 0;
+	}	
+}
+
+/* =contacts
+---------------------------*/
+.contacts{
+	.map{
+		flex-basis: 600px;		
+	}
+
+	#map{
+		border: 5px solid $color2;
+	}
+	.text{
+		flex-grow: 1;
+		margin-left: 1.7rem;
+	}
+
+
+	a{
+		color: $color2;
+		@extend .tdu;
+
+		&.more{
+			@extend .semibold;
+			display: inline-block;
+			padding-right: 26px;
+			position: relative;
+			&:after{
+				@extend .before;
+				@include sprite(-21px, -38px);
+				height: 6px;
+				right: 0;
+				top: 7px;
+				width: 17px;
+			}
+		}
+	}
+
+}
+/* =/contacts
+---------------------------*/
+
+
+/* =populars
+---------------------------*/
+.populars{
+	padding: 1.6rem 0 2.5rem;
+	.flexbox{
+		@include justify-content(space-between);
+	}
+	dl{
+		margin: 1rem 2.5rem 0 .6rem;
+	}
+	dd{
+		margin-left: 0;
+		margin-bottom: .3rem;
+		a{
+			color: $color7;
+		}
+	}
+	dt{
+		@extend .myriadbold;
+		padding-bottom: .5rem;
+	}
+	a:hover{
+		color: $color5;
+	}
+}
+/* =/populars
+---------------------------*/
+
+
+
+/* =footer
+---------------------------*/
+footer{
+	@include font-size(1.3);
+	background-color: $color1;
+	color: $color2;
+	line-height: 1.4;
+	padding-top: .7rem;
+	.flexbox{
+		@include align-items(center);
+	}
+	a{
+		color: $color2;
+		@extend .tdn;		
+	}
+	.right{
+		flex-grow: 1;
+		text-align: right;
+	}
+}
+
+
+/* =/footer
+---------------------------*/

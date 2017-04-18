@@ -1,0 +1,170 @@
+.bottomline{
+	margin-bottom: 2rem;
+	position: relative;
+	padding-bottom: 15px;
+	&:after{
+		@extend .before;
+		border-top: 2px solid;
+		bottom: 0;
+		width: 24px;
+	}
+}
+
+
+
+/* =assortment
+---------------------------*/
+.assortment{
+	background: $color4;
+	padding: 2rem 0 2.4rem;
+	h1{
+		@extend .bottomline;
+	}
+
+	.cats{
+		flex-grow: 1;
+		margin-right: 2.5rem;
+		.row{
+			a{
+				display: inline-block;
+				margin-left: 1.2rem;
+				&:first-child{
+					margin-left: .8rem;
+				}
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+		}
+		.more{
+			margin-left: .8rem;
+		}
+	}
+
+	.text{
+		flex-basis: 26rem;		
+	}
+	.more{
+		@extend .semibold;
+		display: inline-block;
+		margin-top: 1.8rem;
+		padding-right: 26px;
+		position: relative;
+		&:after{
+			@extend .before;
+			@include sprite(0, -38px);
+			height: 6px;
+			right: 0;
+			top: 7px;
+			width: 17px;
+		}
+	}
+}
+/* =/assortment
+---------------------------*/
+
+
+
+/* =aside-content
+---------------------------*/
+.aside-content{
+	padding-top: 2rem;
+	.box{
+
+	}
+	aside{
+		margin-right: 4.2rem;
+		width: 24rem;
+		.menu{
+			a{
+				text-decoration: none;
+			}
+			ul{
+				background: $color4;
+				padding: 1.6rem 2.5rem .7rem;
+				li{
+					// margin-top: .7rem;
+					margin-bottom: .7rem;
+				}
+				ul{
+					margin-top: .7rem;
+					padding-top: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+
+		.subscribe{
+			margin-top: 2.2rem;
+			position: relative;
+			padding-top: 15px;
+			&:before{
+				@extend .before;
+				border-top: 2px solid;
+				top: 0;
+				width: 24px;
+			}
+			form{
+				padding-top: 1rem;
+			}
+			input{
+				border: none;
+				float: left;
+				vertical-align: top;
+				height: 4rem;
+				&.form-control{
+					@include placeholder($color6, $color4);
+					@extend .italic;
+					background-color: $color4;
+					padding-left: 1.5rem;
+					padding-right: 1.5rem;
+					width: calc(100% - 5.6rem);
+				}
+				&.submit{
+					background: $color7 url(../images/letter.png) no-repeat center center ;
+					width: 5.6rem;
+					position: relative;
+				}
+			}
+		}
+		.lastnews{
+			margin-top: 3.2rem;
+		}
+	}
+	.content{
+		flex-grow: 1;
+	}
+
+	.title{
+		padding-bottom: 2rem;
+	}
+}
+/* =/aside-content
+---------------------------*/
+
+
+
+/* =partners
+---------------------------*/
+.partners{
+	background-color: $color4;
+	margin-top: 1.2rem;
+	padding: 2rem 0;
+	.flexbox{
+		@include justify-content(center);
+		a{
+			margin: 0 1.2rem;
+		}
+	}
+}
+/* =partners
+---------------------------*/
+
+
+.contacts{
+	background-color: $color6;
+	color: $color2;
+	padding-top: 1.2rem;
+	padding-bottom: 2rem;
+
+}
