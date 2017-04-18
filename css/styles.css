@@ -107,6 +107,7 @@ html {
 }
 
 body {
+  font-family: "MyriadProRegular", Arial;
   font-size: 14px;
   font-size: 1.4rem;
   color: #000;
@@ -157,7 +158,7 @@ footer {
 
 /*** standart classes *****/
 p {
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 a {
@@ -165,7 +166,7 @@ a {
 }
 
 h1, .title {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
 }
 
 h2 {
@@ -174,6 +175,10 @@ h2 {
 
 h3 {
   font-size: 1.6rem;
+}
+
+.color {
+  color: #d10707;
 }
 
 *:focus {
@@ -185,7 +190,96 @@ input::-moz-focus-inner {
   padding: 0;
 }
 
-@font-face {}.tdn {
+strong {
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "MyriadProRegular";
+  src: url("../fonts/MyriadProRegular/MyriadProRegular.woff") format("woff"), url("../fonts/MyriadProRegular/MyriadProRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.regular {
+  font-family: "MyriadProRegular";
+}
+
+@font-face {
+  font-family: 'MyriadProLight';
+  src: url("../fonts/MyriadPro-Light/MyriadProLight.woff2") format("woff2"), url("../fonts/MyriadPro-Light/MyriadProLight.woff") format("woff"), url("../fonts/MyriadPro-Light/MyriadProLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+.regularlight {
+  font-family: "MyriadProLight";
+}
+
+@font-face {
+  font-family: 'MyriadProLightExt';
+  src: url("../fonts/MyriadPro-LightSemiExt.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+.regularlightext {
+  font-family: "MyriadProLightExt";
+}
+
+/* font-family: "MyriadProBold"; */
+@font-face {
+  font-family: "MyriadProBold";
+  src: url("../fonts/MyriadProBold/MyriadProBold.woff") format("woff"), url("../fonts/MyriadProBold/MyriadProBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.myriadbold, header .logo .tel {
+  font-family: "MyriadProBold";
+}
+
+/* font-family: "MyriadProItalic"; */
+@font-face {
+  font-family: "MyriadProItalic";
+  src: url("../fonts/MyriadProItalic/MyriadProItalic.woff") format("woff"), url("../fonts/MyriadProItalic/MyriadProItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.italic, header .links-search .qsearch #search {
+  font-family: "MyriadProItalic";
+}
+
+/* font-family: "MyriadProSemiBold"; */
+@font-face {
+  font-family: "MyriadProSemiBold";
+  src: url("../fonts/MyriadProSemiBold/MyriadProSemiBold.woff") format("woff"), url("../fonts/MyriadProSemiBold/MyriadProSemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.semibold, strong, header .links-search .links a, nav, .bottom_menu, .contacts a.more, .assortment .more {
+  font-family: "MyriadProSemiBold";
+}
+
+/* font-family: "MyriadProBoldItalic"; */
+@font-face {
+  font-family: "MyriadProBoldItalic";
+  src: url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.woff") format("woff"), url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* font-family: "MyriadProSemiBoldItalic"; */
+@font-face {
+  font-family: "MyriadProSemiBoldItalic";
+  src: url("../fonts/MyriadProSemiBoldItalic/MyriadProSemiBoldItalic.woff") format("woff"), url("../fonts/MyriadProSemiBoldItalic/MyriadProSemiBoldItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.tdn {
   text-decoration: none;
 }
 
@@ -193,15 +287,15 @@ input::-moz-focus-inner {
   text-decoration: underline;
 }
 
-.tdu {
+.tdu, header .links-search .links a, .contacts a {
   text-decoration: underline;
 }
 
-.tdu:hover {
+.tdu:hover, header .links-search .links a:hover, .contacts a:hover {
   text-decoration: none;
 }
 
-.before, .bottomline:after, .assortment h1:after, .aside-content aside .subscribe:before {
+.before, header .links-search .links a:before, header .right #cart:before, header .right .link-feedback:before, .contacts a.more:after, .bottomline:after, .assortment h1:after, .assortment .more:after, .aside-content aside .subscribe:before {
   content: "";
   display: block;
   position: absolute;
@@ -236,24 +330,83 @@ header .flexbox {
   justify-content: space-between;
 }
 
+header .logo {
+  padding-left: 2.5rem;
+}
+
 header .logo_link {
   display: block;
 }
 
+header .logo .tel-email {
+  margin-left: 3.5rem;
+  text-align: right;
+  width: 16rem;
+}
+
 header .logo .tel {
   text-decoration: none;
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+header .logo .email {
+  color: #d10707;
 }
 
 header .links-search {
+  padding-top: 2rem;
   width: 36rem;
 }
 
 header .links-search .links a {
+  display: inline-block;
   margin-right: 1.8rem;
+  position: relative;
 }
 
 header .links-search .links a:last-child {
   margin-right: 0;
+}
+
+header .links-search .links a:before {
+  background-image: url(../images/sprite.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  bottom: 0;
+}
+
+header .links-search .links .link-address {
+  padding-left: 30px;
+}
+
+header .links-search .links .link-address:before {
+  background-position: 0 -45px;
+  height: 28px;
+  width: 20px;
+  left: 0;
+}
+
+header .links-search .links .link-delivery {
+  padding-left: 42px;
+}
+
+header .links-search .links .link-delivery:before {
+  background-position: -21px -45px;
+  height: 28px;
+  width: 28px;
+  left: 0;
+}
+
+header .links-search .links .link-payment {
+  padding-left: 37px;
+}
+
+header .links-search .links .link-payment:before {
+  background-position: -50px -45px;
+  height: 23px;
+  width: 24px;
+  left: 0;
 }
 
 header .links-search .qsearch {
@@ -275,10 +428,10 @@ header .links-search .qsearch #search {
 }
 
 header .links-search .qsearch .submit {
-  background-color: transparent;
   background-image: url(../images/sprite.png);
   background-repeat: no-repeat;
   background-position: 10px 4px;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   width: 41px;
@@ -301,15 +454,32 @@ header .right {
 
 header .right a {
   display: block;
-  text-decoration: none;
   height: 4rem;
+  text-decoration: none;
   white-space: nowrap;
 }
 
 header .right #cart {
+  font-size: 18px;
+  font-size: 1.8rem;
+  background-color: #888d90;
+  color: #fff;
   display: block;
   height: 4rem;
-  padding-left: 4.5rem;
+  padding-left: 1.5rem;
+  padding-top: .8rem;
+  position: relative;
+  text-align: center;
+}
+
+header .right #cart:before {
+  background-image: url(../images/sprite.png);
+  background-repeat: no-repeat;
+  background-position: -61px 0;
+  height: 21px;
+  left: 8px;
+  top: 9px;
+  width: 24px;
 }
 
 header .right .link-feedback {
@@ -318,12 +488,28 @@ header .right .link-feedback {
   display: block;
   padding-left: 4.5rem;
   padding-top: 1.2rem;
+  position: relative;
+}
+
+header .right .link-feedback:before {
+  background-image: url(../images/sprite.png);
+  background-repeat: no-repeat;
+  background-position: -32px 0;
+  height: 22px;
+  left: 7px;
+  top: 9px;
+  width: 27px;
 }
 
 /* =/header
 ---------------------------*/
 /* =nav
 ---------------------------*/
+nav {
+  font-size: 13px;
+  font-size: 1.3rem;
+}
+
 nav ul {
   background-color: #f2f2f2;
   display: -webkit-flex;
@@ -387,6 +573,95 @@ nav ul li > ul {
 
 /* =main
 ---------------------------*/
+/* =menu
+---------------------------*/
+.bottom_menu {
+  font-size: 13px;
+  font-size: 1.3rem;
+  background-color: #f2f2f2;
+}
+
+.bottom_menu ul {
+  text-transform: uppercase;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.bottom_menu ul li a {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  height: 4rem;
+  text-decoration: none;
+}
+
+/* =/menu
+---------------------------*/
+.contacts p,
+main p {
+  margin: 1.2rem 0;
+}
+
+/* =contacts
+---------------------------*/
+.contacts .map {
+  -webkit-flex-basis: 600px;
+      -ms-flex-preferred-size: 600px;
+          flex-basis: 600px;
+}
+
+.contacts #map {
+  border: 5px solid #fff;
+}
+
+.contacts .text {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: 1.7rem;
+}
+
+.contacts a {
+  color: #fff;
+}
+
+.contacts a.more {
+  display: inline-block;
+  padding-right: 26px;
+  position: relative;
+}
+
+.contacts a.more:after {
+  background-image: url(../images/sprite.png);
+  background-repeat: no-repeat;
+  background-position: -21px -38px;
+  height: 6px;
+  right: 0;
+  top: 7px;
+  width: 17px;
+}
+
+/* =/contacts
+---------------------------*/
+/* =populars
+---------------------------*/
+.populars {
+  padding: 1.6rem 0 2.5rem;
+}
+
+/* =/populars
+---------------------------*/
 /* =footer
 ---------------------------*/
 footer {
@@ -394,6 +669,8 @@ footer {
   color: #fff;
 }
 
+/* =/footer
+---------------------------*/
 .bottomline, .assortment h1 {
   margin-bottom: 2rem;
   position: relative;
@@ -414,6 +691,9 @@ footer {
 }
 
 .assortment .cats {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   margin-right: 2.5rem;
 }
 
@@ -435,14 +715,26 @@ footer {
 }
 
 .assortment .text {
-  -webkit-flex-basis: 50%;
-      -ms-flex-preferred-size: 50%;
-          flex-basis: 50%;
+  -webkit-flex-basis: 26rem;
+      -ms-flex-preferred-size: 26rem;
+          flex-basis: 26rem;
 }
 
 .assortment .more {
   display: inline-block;
   margin-top: 1.8rem;
+  padding-right: 26px;
+  position: relative;
+}
+
+.assortment .more:after {
+  background-image: url(../images/sprite.png);
+  background-repeat: no-repeat;
+  background-position: 0 -38px;
+  height: 6px;
+  right: 0;
+  top: 7px;
+  width: 17px;
 }
 
 /* =/assortment
@@ -537,10 +829,24 @@ footer {
   padding: 2rem 0;
 }
 
+.partners .flexbox {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+
+.partners .flexbox a {
+  margin: 0 1.2rem;
+}
+
 /* =partners
 ---------------------------*/
 .contacts {
-  margin-top: 1.2rem;
+  background-color: #858d90;
+  color: #fff;
+  padding-top: 1.2rem;
+  padding-bottom: 2rem;
 }
 
 ::-ms-clear {
