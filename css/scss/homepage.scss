@@ -76,20 +76,97 @@
 		margin-right: 4.2rem;
 		width: 24rem;
 		.menu{
+			.topcat{
+				@extend .semibold;
+				cursor: pointer;
+				padding-bottom: 2rem;
+				padding-left: 4rem;
+				position: relative;
+				margin-top: 3rem;
+				&:before{
+					@extend .before;
+					background-color: $color8;
+					border-radius: 0 19px 19px 0;
+					color: $color2;
+					content: "+";
+					height: 19px;
+					left: 0;
+					text-align: center;
+					top: -1px;
+					width: 26px;
+				}
+				&:first-child{
+					margin-top: 0;
+				}
+				&.show{
+					&:before{
+						background-color: $color1;
+						content: "-";
+					}
+				}
+			}
 			a{
+				color: $color9;
 				text-decoration: none;
 			}
-			ul{
+			&_container{
 				background: $color4;
-				padding: 1.6rem 2.5rem .7rem;
+				padding: 1.6rem 0 .7rem;				
+			}
+
+			ul{
+				padding-left: 4rem;
+				padding-right: 2.5rem;
 				li{
-					// margin-top: .7rem;
-					margin-bottom: .7rem;
+					margin-bottom: 1.2rem;
+				}
+				& > li{
+					& > a{
+						position: relative;
+						&:before{
+							@extend .before;
+							left: -14px;
+							top: 4px;
+							width: 0;
+							height: 0;
+							border-top: 4px solid transparent;
+							border-left: 5px solid $color7;
+							border-bottom: 4px solid transparent;
+						}
+						&.active{
+							@extend .semibold;
+							color: $color1;
+							&:before{
+								border-left: 4px solid transparent;
+								border-right: 4px solid transparent;
+								border-top: 5px solid $color1;
+								border-bottom: none;
+								top: 7px;
+							}
+						}
+					}
+					ul{
+						margin-top: 1rem;
+						li{
+							@extend .italic;
+							a{
+								&:before{
+									display: none;
+								}
+							}
+						}
+					}
 				}
 				ul{
 					margin-top: .7rem;
-					padding-top: 0;
-					padding-bottom: 0;
+					padding: 0 0 0 8px;
+				}
+
+				&.level_0{
+					display: none;
+					&.show{
+						display: block;
+					}
 				}
 			}
 		}

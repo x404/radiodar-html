@@ -225,7 +225,7 @@ strong {
   font-weight: normal;
 }
 
-.italic, header .links-search .qsearch #search, .aside-content aside .subscribe input.form-control {
+.italic, header .links-search .qsearch #search, .aside-content aside .menu ul > li ul li, .aside-content aside .subscribe input.form-control {
   font-family: "MyriadProItalic";
 }
 
@@ -237,7 +237,7 @@ strong {
   font-weight: normal;
 }
 
-.semibold, strong, header .links-search .links a, nav, .bottom_menu, .contacts a.more, .assortment .more {
+.semibold, strong, header .links-search .links a, nav, .bottom_menu, .contacts a.more, .assortment .more, .aside-content aside .menu .topcat, .aside-content aside .menu ul > li > a.active {
   font-family: "MyriadProSemiBold";
 }
 
@@ -273,7 +273,7 @@ strong {
   text-decoration: none;
 }
 
-.before, header .links-search .links a:before, header .right #cart:before, header .right .link-feedback:before, .contacts a.more:after, .bottomline:after, .assortment h1:after, .assortment .more:after, .aside-content aside .subscribe:before {
+.before, header .links-search .links a:before, header .right #cart:before, header .right .link-feedback:before, .contacts a.more:after, .bottomline:after, .assortment h1:after, .assortment .more:after, .aside-content aside .menu .topcat:before, .aside-content aside .menu ul > li > a:before, .aside-content aside .subscribe:before {
   content: "";
   display: block;
   position: absolute;
@@ -791,23 +791,99 @@ footer .right {
   width: 24rem;
 }
 
+.aside-content aside .menu .topcat {
+  cursor: pointer;
+  padding-bottom: 2rem;
+  padding-left: 4rem;
+  position: relative;
+  margin-top: 3rem;
+}
+
+.aside-content aside .menu .topcat:before {
+  background-color: #898e91;
+  border-radius: 0 19px 19px 0;
+  color: #fff;
+  content: "+";
+  height: 19px;
+  left: 0;
+  text-align: center;
+  top: -1px;
+  width: 26px;
+}
+
+.aside-content aside .menu .topcat:first-child {
+  margin-top: 0;
+}
+
+.aside-content aside .menu .topcat.show:before {
+  background-color: #000;
+  content: "-";
+}
+
 .aside-content aside .menu a {
+  color: #666;
   text-decoration: none;
 }
 
-.aside-content aside .menu ul {
+.aside-content aside .menu_container {
   background: #f2f2f2;
-  padding: 1.6rem 2.5rem .7rem;
+  padding: 1.6rem 0 .7rem;
+}
+
+.aside-content aside .menu ul {
+  padding-left: 4rem;
+  padding-right: 2.5rem;
 }
 
 .aside-content aside .menu ul li {
-  margin-bottom: .7rem;
+  margin-bottom: 1.2rem;
+}
+
+.aside-content aside .menu ul > li > a {
+  position: relative;
+}
+
+.aside-content aside .menu ul > li > a:before {
+  left: -14px;
+  top: 4px;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-left: 5px solid #888c8f;
+  border-bottom: 4px solid transparent;
+}
+
+.aside-content aside .menu ul > li > a.active {
+  color: #000;
+}
+
+.aside-content aside .menu ul > li > a.active:before {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #000;
+  border-bottom: none;
+  top: 7px;
+}
+
+.aside-content aside .menu ul > li ul {
+  margin-top: 1rem;
+}
+
+.aside-content aside .menu ul > li ul li a:before {
+  display: none;
 }
 
 .aside-content aside .menu ul ul {
   margin-top: .7rem;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0 0 0 8px;
+}
+
+.aside-content aside .menu ul.level_0 {
+  display: none;
+}
+
+.aside-content aside .menu ul.level_0.show {
+  display: block;
 }
 
 .aside-content aside .subscribe {

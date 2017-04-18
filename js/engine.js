@@ -1,5 +1,14 @@
 $(document).ready(function(){
 
+	$('.topcat').click(function(e){
+		e.preventDefault();
+		var $this = $(this);
+
+		$this.toggleClass('show');
+		$this.next('ul').slideToggle();
+	});
+
+
 	// карусель
 	$('#foo1').owlCarousel({
 		loop:false,
