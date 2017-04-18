@@ -128,7 +128,7 @@ input::-moz-focus-inner {
 @supports (display: grid) {
   .grid-container {
     display: grid;
-    grid-template-areas: "top" "header" "nav" "main" "footer";
+    grid-template-areas: "top" "header" "nav" "main" "footer";
     grid-template-columns: 1fr;
     grid-template-rows: 40px min-content min-content auto 65px;
     min-height: 100%;
@@ -157,14 +157,14 @@ footer {
 
 /*** standart classes *****/
 p {
-  line-height: 16px;
+  line-height: 1.2;
 }
 
 a {
   color: #020000;
 }
 
-h1 {
+h1, .title {
   font-size: 2.5rem;
 }
 
@@ -201,31 +201,164 @@ input::-moz-focus-inner {
   text-decoration: none;
 }
 
-.before {
+.before, .bottomline:after, .assortment h1:after, .aside-content aside .subscribe:before {
   content: "";
   display: block;
   position: absolute;
 }
 
-.form-control {
-  border: 1px solid #f4f4f4;
-  border-radius: 0;
-  margin-top: 0.6rem;
-  font-size: 16px;
+.top {
+  background-color: #f2f2f2;
+  padding: 1rem 0;
 }
 
-.form-control:focus, .form-control:active {
-  border-color: #666;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(222, 72, 111, 0.3);
+.flexbox {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.submit {
+  cursor: pointer;
 }
 
 /* =header
 ---------------------------*/
+header {
+  padding: 1.5rem 0 2.5rem;
+}
+
+header .flexbox {
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+
+header .logo_link {
+  display: block;
+}
+
+header .logo .tel {
+  text-decoration: none;
+}
+
+header .links-search {
+  width: 36rem;
+}
+
+header .links-search .links a {
+  margin-right: 1.8rem;
+}
+
+header .links-search .links a:last-child {
+  margin-right: 0;
+}
+
+header .links-search .qsearch {
+  margin-top: 3rem;
+}
+
+header .links-search .qsearch input {
+  float: left;
+  vertical-align: top;
+  height: 3.8rem;
+}
+
+header .links-search .qsearch #search {
+  background-color: #f2f2f2;
+  border: none;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: calc(100% - 41px);
+}
+
+header .links-search .qsearch .submit {
+  background-color: transparent;
+  background-image: url(../images/sprite.png);
+  background-repeat: no-repeat;
+  background-position: 10px 4px;
+  border: none;
+  cursor: pointer;
+  width: 41px;
+}
+
+header .right {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 16rem;
+}
+
+header .right a {
+  display: block;
+  text-decoration: none;
+  height: 4rem;
+  white-space: nowrap;
+}
+
+header .right #cart {
+  display: block;
+  height: 4rem;
+  padding-left: 4.5rem;
+}
+
+header .right .link-feedback {
+  color: #fff;
+  background-color: #d00606;
+  display: block;
+  padding-left: 4.5rem;
+  padding-top: 1.2rem;
+}
+
 /* =/header
 ---------------------------*/
-/* =navigation
+/* =nav
 ---------------------------*/
-/* =/navigation
+nav ul {
+  background-color: #f2f2f2;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+
+nav ul a {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  height: 4rem;
+  text-decoration: none;
+}
+
+nav ul > li {
+  padding: 0 2.5rem;
+  text-transform: uppercase;
+}
+
+nav ul li > ul {
+  display: none;
+}
+
+/* =/nav
 ---------------------------*/
 .owl-carousel .owl-controls {
   position: absolute;
@@ -259,6 +392,155 @@ input::-moz-focus-inner {
 footer {
   background-color: #000;
   color: #fff;
+}
+
+.bottomline, .assortment h1 {
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.bottomline:after, .assortment h1:after {
+  border-top: 2px solid;
+  bottom: 0;
+  width: 24px;
+}
+
+/* =assortment
+---------------------------*/
+.assortment {
+  background: #f2f2f2;
+  padding: 2rem 0 2.4rem;
+}
+
+.assortment .cats {
+  margin-right: 2.5rem;
+}
+
+.assortment .cats .row a {
+  display: inline-block;
+  margin-left: 1.2rem;
+}
+
+.assortment .cats .row a:first-child {
+  margin-left: .8rem;
+}
+
+.assortment .cats .row a:last-child {
+  margin-right: 0;
+}
+
+.assortment .cats .more {
+  margin-left: .8rem;
+}
+
+.assortment .text {
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+}
+
+.assortment .more {
+  display: inline-block;
+  margin-top: 1.8rem;
+}
+
+/* =/assortment
+---------------------------*/
+/* =aside-content
+---------------------------*/
+.aside-content {
+  padding-top: 2rem;
+}
+
+.aside-content aside {
+  margin-right: 4.2rem;
+  width: 24rem;
+}
+
+.aside-content aside .menu a {
+  text-decoration: none;
+}
+
+.aside-content aside .menu ul {
+  background: #f2f2f2;
+  padding: 1.6rem 2.5rem .7rem;
+}
+
+.aside-content aside .menu ul li {
+  margin-bottom: .7rem;
+}
+
+.aside-content aside .menu ul ul {
+  margin-top: .7rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.aside-content aside .subscribe {
+  margin-top: 2.2rem;
+  position: relative;
+  padding-top: 15px;
+}
+
+.aside-content aside .subscribe:before {
+  border-top: 2px solid;
+  top: 0;
+  width: 24px;
+}
+
+.aside-content aside .subscribe form {
+  padding-top: 1rem;
+}
+
+.aside-content aside .subscribe input {
+  border: none;
+  float: left;
+  vertical-align: top;
+  height: 4rem;
+}
+
+.aside-content aside .subscribe input.form-control {
+  font-size: 12px;
+  font-size: 1.2rem;
+  background-color: #f2f2f2;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: calc(100% - 5.6rem);
+}
+
+.aside-content aside .subscribe input.submit {
+  width: 5.6rem;
+}
+
+.aside-content aside .lastnews {
+  margin-top: 3.2rem;
+}
+
+.aside-content .content {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.aside-content .title {
+  padding-bottom: 2rem;
+}
+
+/* =/aside-content
+---------------------------*/
+/* =partners
+---------------------------*/
+.partners {
+  background-color: #f2f2f2;
+  margin-top: 1.2rem;
+  padding: 2rem 0;
+}
+
+/* =partners
+---------------------------*/
+.contacts {
+  margin-top: 1.2rem;
 }
 
 ::-ms-clear {
