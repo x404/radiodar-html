@@ -127,6 +127,7 @@ nav {
 
 .main {
   grid-area: main;
+  overflow: hidden;
 }
 
 footer {
@@ -225,7 +226,7 @@ strong {
   font-weight: normal;
 }
 
-.italic, header .links-search .qsearch #search, .aside-content aside .menu ul > li ul li, .aside-content aside .subscribe input.form-control {
+.italic, header .links-search .qsearch #search, #foo1 .slide .box .description p, .aside-content aside .menu ul > li ul li, .aside-content aside .subscribe input.form-control {
   font-family: "MyriadProItalic";
 }
 
@@ -237,7 +238,7 @@ strong {
   font-weight: normal;
 }
 
-.semibold, strong, header .links-search .links a, nav, .bottom_menu, .contacts a.more, .assortment .more, .aside-content aside .menu .topcat, .aside-content aside .menu ul > li > a.active {
+.semibold, strong, header .links-search .links a, nav, .bottom_menu, .contacts a.more, .more, .aside-content aside .menu .topcat, .aside-content aside .menu ul > li > a.active {
   font-family: "MyriadProSemiBold";
 }
 
@@ -265,15 +266,15 @@ strong {
   text-decoration: underline;
 }
 
-.tdu, header .links-search .links a, .contacts a {
+.tdu, header .links-search .links a, .contacts a, .more {
   text-decoration: underline;
 }
 
-.tdu:hover, header .links-search .links a:hover, .contacts a:hover {
+.tdu:hover, header .links-search .links a:hover, .contacts a:hover, .more:hover {
   text-decoration: none;
 }
 
-.before, header .links-search .links a:before, header .right #cart:before, header .right .link-feedback:before, .contacts a.more:after, .bottomline:after, .assortment h1:after, .assortment .more:after, .aside-content aside .menu .topcat:before, .aside-content aside .menu ul > li > a:before, .aside-content aside .subscribe:before {
+.before, header .links-search .links a:before, header .right #cart:before, header .right .link-feedback:before, .bottomline:after, .assortment h1:after, #foo1 .slide .box .description h3:after, #foo1 .slide .price:before, .more:after, .aside-content aside .menu .topcat:before, .aside-content aside .menu ul > li > a:before, .aside-content aside .subscribe:before {
   content: "";
   display: block;
   position: absolute;
@@ -524,33 +525,6 @@ nav ul li > ul {
 
 /* =/nav
 ---------------------------*/
-.owl-carousel .owl-controls {
-  position: absolute;
-  width: 100%;
-  top: 115px;
-}
-
-.owl-carousel .owl-controls .owl-buttons .owl-prev,
-.owl-carousel .owl-controls .owl-buttons .owl-next {
-  background: url(../images/prevnext.png) no-repeat left top;
-  width: 65px;
-  height: 65px;
-  position: absolute;
-}
-
-.owl-carousel .owl-controls .owl-buttons .owl-prev {
-  left: -110px;
-}
-
-.owl-carousel .owl-controls .owl-buttons .owl-next {
-  background-image: url(../images/sprite.png);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  right: -110px;
-}
-
-/* =main
----------------------------*/
 /* =menu
 ---------------------------*/
 .bottom_menu {
@@ -625,22 +599,6 @@ main p {
 
 .contacts a {
   color: #fff;
-}
-
-.contacts a.more {
-  display: inline-block;
-  padding-right: 26px;
-  position: relative;
-}
-
-.contacts a.more:after {
-  background-image: url(../images/sprite.png);
-  background-repeat: no-repeat;
-  background-position: -21px -38px;
-  height: 6px;
-  right: 0;
-  top: 7px;
-  width: 17px;
 }
 
 /* =/contacts
@@ -724,6 +682,150 @@ footer .right {
   width: 24px;
 }
 
+#foo1 .slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 700px;
+}
+
+#foo1 .slide .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+#foo1 .slide .container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+#foo1 .slide .container .inner {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+#foo1 .slide-title {
+  font-size: 36px;
+  font-size: 3.6rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#foo1 .slide-subtitle {
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 22px;
+  font-size: 2.2rem;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  background-color: #d10707;
+  color: #fff;
+  height: 40px;
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+#foo1 .slide .inner {
+  width: 455px;
+  margin-left: 9px;
+}
+
+#foo1 .slide .box {
+  border: 1px solid #9fb5be;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 1.5rem;
+  padding: 2rem 1.5rem;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#foo1 .slide .box .description {
+  padding-left: 2.5rem;
+}
+
+#foo1 .slide .box .description h3 {
+  font-size: 18px;
+  font-size: 1.8rem;
+  color: #d10707;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+#foo1 .slide .box .description h3:after {
+  border-bottom: 1px solid #000;
+  padding-bottom: 1.2rem;
+  width: 112px;
+}
+
+#foo1 .slide .price {
+  font-size: 50px;
+  font-size: 5rem;
+  color: #fff;
+  margin-top: 2.5rem;
+  position: relative;
+  padding-left: 45px;
+}
+
+#foo1 .slide .price:before {
+  background: rgba(255, 255, 255, 0.5) url("data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAANCAQAAAA+y+ezAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfhBBISIQ3z0EUTAAAAPklEQVQI11WPMRIAMAjCIv//Mx1aq7gROQ7KYIp/woA3uF8PIJEgkZ7zo1p54eiMUsp2eHKUspsy5W/TteUAvs0PFn0ybLQAAAAASUVORK5CYII=") no-repeat center center;
+  border-radius: 50%;
+  height: 31px;
+  left: 0;
+  top: 15px;
+  width: 31px;
+}
+
+#foo1 .owl-dots {
+  position: absolute;
+  bottom: 17px;
+  text-align: center;
+  width: 100%;
+}
+
+#foo1 .owl-dots .owl-dot {
+  background-color: #fff;
+  border-radius: 50%;
+  border: 4px solid #d10707;
+  display: inline-block;
+  height: 22px;
+  margin-left: 5px;
+  margin-right: 5px;
+  opacity: .5;
+  width: 22px;
+}
+
+#foo1 .owl-dots .owl-dot.active {
+  opacity: 1;
+  background-color: #d10707;
+  border-color: #fff;
+}
+
 /* =assortment
 ---------------------------*/
 .assortment {
@@ -732,15 +834,22 @@ footer .right {
 }
 
 .assortment .cats {
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
   margin-right: 2.5rem;
+}
+
+.assortment .cats .row {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .assortment .cats .row a {
   display: inline-block;
   margin-left: 1.2rem;
+  -webkit-filter: grayscale(1) opacity(0.8);
+  filter: grayscale(1) opacity(0.8);
+  transition: all 0.2s ease-out;
 }
 
 .assortment .cats .row a:first-child {
@@ -751,24 +860,29 @@ footer .right {
   margin-right: 0;
 }
 
+.assortment .cats .row a:hover {
+  -webkit-filter: grayscale(0) opacity(1);
+  filter: grayscale(0) opacity(1);
+}
+
 .assortment .cats .more {
   margin-left: .8rem;
 }
 
 .assortment .text {
-  -webkit-flex-basis: 26rem;
-      -ms-flex-preferred-size: 26rem;
-          flex-basis: 26rem;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
-.assortment .more {
+.more {
   display: inline-block;
   margin-top: 1.8rem;
   padding-right: 26px;
   position: relative;
 }
 
-.assortment .more:after {
+.more:after {
   background-image: url(../images/sprite.png);
   background-repeat: no-repeat;
   background-position: 0 -38px;
@@ -776,6 +890,14 @@ footer .right {
   right: 0;
   top: 7px;
   width: 17px;
+}
+
+.more.more-white {
+  color: #fff;
+}
+
+.more.more-white:after {
+  background-position: -21px -38px;
 }
 
 /* =/assortment

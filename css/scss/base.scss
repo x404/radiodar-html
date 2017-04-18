@@ -98,6 +98,7 @@ nav{
 
 .main{
 	grid-area: main;
+	overflow: hidden;
 }
 
 footer{
@@ -466,38 +467,6 @@ nav{
 ---------------------------*/
 
 
-.owl-carousel{
-	.owl-controls{
-		position: absolute;
-		width: 100%;
-		top: 115px;
-		.owl-buttons{
-			.owl-prev,
-			.owl-next{
-				background: url(../images/prevnext.png) no-repeat left top;
-				width: 65px;
-				height: 65px;
-				position: absolute;
-			}
-			.owl-prev{
-				left: -110px;
-			}
-			.owl-next{
-				@include sprite;
-				// .rotation(180deg);
-				right: -110px;
-			}
-		}
-	}
-}
-
-/* =main
----------------------------*/
-
-
-
-
-
 /* =menu
 ---------------------------*/
 .bottom_menu{
@@ -566,17 +535,17 @@ main
 
 		&.more{
 			@extend .semibold;
-			display: inline-block;
-			padding-right: 26px;
-			position: relative;
-			&:after{
-				@extend .before;
-				@include sprite(-21px, -38px);
-				height: 6px;
-				right: 0;
-				top: 7px;
-				width: 17px;
-			}
+			// display: inline-block;
+			// padding-right: 26px;
+			// position: relative;
+			// &:after{
+			// 	@extend .before;
+			// 	@include sprite(-21px, -38px);
+			// 	height: 6px;
+			// 	right: 0;
+			// 	top: 7px;
+			// 	width: 17px;
+			// }
 		}
 	}
 
