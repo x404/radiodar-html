@@ -449,24 +449,44 @@ nav{
 	@extend .semibold;
 
 	ul{
+		transition: opacity 0.3s;
+	}
+
+	ul.mainnav{
 		position: relative;
 		background-color: $color4;
 		@include flexbox;
 		@include justify-content(space-between);
-		a{
+		a,
+		span{
 			@include flexbox;
 			@include align-items(center);
 			height: 4rem;
 			text-decoration: none;
+			cursor: pointer;
+		}
+		ul{
+			// position: absolute;
 		}
 		& > li{ //0-level
-			padding: 0 2.5rem;
+			& > a,
+			& > span{
+				padding: 0 2.5rem;				
+			}
+
 			text-transform: uppercase;
 			&:hover{
+				& > span{
+					background-color: $color1;
+					color: $color2;
+				}
 				& > ul{
 					opacity: 1;
 					z-index: 10;
 				}				
+			}
+			ul{
+				@include flexbox;
 			}
 			& > ul{
 				@include justify-content(flex-start);
@@ -477,7 +497,7 @@ nav{
 				position: absolute;
 				width: 100%;
 				z-index: -10;
-				transition: opacity 0.3s;
+				
 				&:after{
 					@extend .before;
 					border-bottom: 4px solid $color3;
@@ -538,6 +558,7 @@ nav{
 							@extend .italic;
 							text-transform: none;
 							padding: 0 .9rem;
+							position: relative;
 
 							&:after{
 								display: none;
@@ -552,6 +573,7 @@ nav{
 								top: 0;
 								width: 100%;
 								z-index: -1;
+								position: absolute;
 
 								& > li{ // 3 level
 									a{
@@ -574,6 +596,7 @@ nav{
 							}
 
 							a{
+								color: $color2;
 								height: auto;
 								padding: .5rem .8rem;
 							}
