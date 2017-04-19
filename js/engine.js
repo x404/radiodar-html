@@ -29,6 +29,17 @@ $(document).ready(function(){
 		dotsContainer : '.owl_pagination2 .owl-dots',
 	});
 
+	$('#foo3').owlCarousel({
+		loop:false,
+		nav: true,
+		margin: 20,
+		dots: true,
+		items:3,
+		navText: ["", ""],
+		navContainer : '.owl_pagination3 .owl-nav',
+		dotsContainer : '.owl_pagination3 .owl-dots',
+	});
+
 });
 
 // =заглушка для IE
