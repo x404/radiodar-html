@@ -543,7 +543,8 @@ nav ul.mainnav > li > span {
   padding: 0 2.5rem;
 }
 
-nav ul.mainnav > li:hover > span {
+nav ul.mainnav > li:hover > span,
+nav ul.mainnav > li:hover > a {
   background-color: #000;
   color: #fff;
 }

@@ -476,7 +476,8 @@ nav{
 
 			text-transform: uppercase;
 			&:hover{
-				& > span{
+				& > span,
+				& > a{
 					background-color: $color1;
 					color: $color2;
 				}
@@ -710,17 +711,6 @@ main
 
 		&.more{
 			@extend .semibold;
-			// display: inline-block;
-			// padding-right: 26px;
-			// position: relative;
-			// &:after{
-			// 	@extend .before;
-			// 	@include sprite(-21px, -38px);
-			// 	height: 6px;
-			// 	right: 0;
-			// 	top: 7px;
-			// 	width: 17px;
-			// }
 		}
 	}
 
