@@ -1,0 +1,11 @@
+.card{
+	border-top: 8px solid #f2f2f2;
+	margin-top: 2rem;
+	.pic{
+		border: 1px solid $color4;
+		margin-top: 1.5rem;
+		img{
+			vertical-align: top;
+		}
+	}
+}

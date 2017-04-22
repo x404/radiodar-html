@@ -21,23 +21,57 @@ $(document).ready(function(){
 	$('#foo2').owlCarousel({
 		loop:false,
 		nav: true,
-		margin: 20,
 		dots: true,
 		items:3,
 		navText: ["", ""],
 		navContainer : '.owl_pagination2 .owl-nav',
 		dotsContainer : '.owl_pagination2 .owl-dots',
+		responsive:{
+			0:{
+				items:1,
+				stagePadding: 20
+			},
+			400:{
+				items:2
+			},
+			580:{
+				items:3
+			},
+			800:{
+				items:2,
+			},
+			1160:{
+				items:3
+			}
+		}
 	});
 
 	$('#foo3').owlCarousel({
 		loop:false,
 		nav: true,
-		margin: 20,
 		dots: true,
 		items:3,
 		navText: ["", ""],
 		navContainer : '.owl_pagination3 .owl-nav',
 		dotsContainer : '.owl_pagination3 .owl-dots',
+		responsive:{
+			0:{
+				items:1,
+				stagePadding: 20
+			},
+			400:{
+				items:2
+			},
+			580:{
+				items:3
+			},
+			800:{
+				items:2,
+			},
+			1160:{
+				items:3
+			}
+		}
 	});
 
 });

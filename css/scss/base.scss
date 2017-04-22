@@ -276,6 +276,28 @@ strong{
 	cursor: pointer;
 }
 
+
+.bottomline{
+	margin-bottom: 2rem;
+	position: relative;
+	padding-bottom: 15px;
+	&:after{
+		@extend .before;
+		border-top: 2px solid;
+		bottom: 0;
+		width: 24px;
+	}
+}
+
+
+.text-center{
+	text-align: center;
+}
+
+.text-right{
+	text-align: right;
+}
+
 /* =header
 ---------------------------*/
 header{
@@ -749,6 +771,31 @@ main
 
 
 
+
+/* =partners
+---------------------------*/
+.partners{
+	background-color: $color4;
+	margin-top: 1.2rem;
+	padding: 2rem 0;
+	.flexbox{
+		@include justify-content(center);
+		a{
+			margin: 0 1.2rem;
+		}
+	}
+}
+/* =partners
+---------------------------*/
+
+
+.popular{
+	margin-top: 7.5rem;
+}
+
+
+
+
 /* =footer
 ---------------------------*/
 footer{
@@ -769,7 +816,7 @@ footer{
 		text-align: right;
 	}
 }
-
-
 /* =/footer
 ---------------------------*/
+
+

@@ -1,16 +1,3 @@
-.bottomline{
-	margin-bottom: 2rem;
-	position: relative;
-	padding-bottom: 15px;
-	&:after{
-		@extend .before;
-		border-top: 2px solid;
-		bottom: 0;
-		width: 24px;
-	}
-}
-
-
 
 
 
@@ -65,15 +52,11 @@
 		}
 
 		.box{
-			// border: 1px solid rgba(119, 166, 137, .7);
 			border: 1px solid #9fb5be;
 			background-color: rgba(255, 255, 255, .5);
 			margin-top: 1.5rem;
 			padding: 2.5rem 1.5rem 3rem;
 			@include flexbox;
-			.pic{
-				// padding-top: 1rem;
-			}
 
 			.description{
 				padding-left: 2.5rem;
@@ -121,9 +104,8 @@
 	}
 
 	.owl-dots{
-		position: absolute;
-		// left: 50%;
 		bottom: 17px;
+		position: absolute;
 		text-align: center;
 		width: 100%;
 		.owl-dot{
@@ -151,7 +133,8 @@
 }
 
 #foo2,
-#foo3
+#foo3,
+.result-search
 {
 	.item{
 		display: block;
@@ -167,17 +150,22 @@
 	}
 	h4,
 	.category{
+		padding-left: .8rem;
 	}
+	.category{
+	}
+	
 	.head{
+		padding-top: .8rem;
 		a{
 			@extend .tdu;
-		}
-		h4{
-
 		}
 		.category{
 			@extend .italic;
 			color: $color7;
+			a{
+				color: currentColor;
+			}
 		}
 	}
 
@@ -323,9 +311,6 @@
 }
 
 
-.popular{
-	margin-top: 7.5rem;
-}
 
 /* =assortment
 ---------------------------*/
@@ -388,7 +373,6 @@
 			background-position: -21px -38px
 		}
 	}
-
 }
 /* =/assortment
 ---------------------------*/
@@ -547,22 +531,4 @@
 	}
 }
 /* =/aside-content
----------------------------*/
-
-
-
-/* =partners
----------------------------*/
-.partners{
-	background-color: $color4;
-	margin-top: 1.2rem;
-	padding: 2rem 0;
-	.flexbox{
-		@include justify-content(center);
-		a{
-			margin: 0 1.2rem;
-		}
-	}
-}
-/* =partners
 ---------------------------*/

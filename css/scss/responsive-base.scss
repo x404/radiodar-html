@@ -12,3 +12,101 @@
 
 @media (max-width: 545px){
 }
+
+
+
+@media (max-width: 991px){
+	header{
+		.links-search{
+			width: 23rem;
+			.links{
+				margin-top: -3rem;
+				a{
+					margin-top: 3rem;
+				}
+			}
+		}
+		.right{
+			flex-shrink: 0;
+		}
+	}
+
+	nav ul.mainnav > li > a, 
+	nav ul.mainnav > li > span,
+	.bottom_menu ul li a{
+		padding: 0 2rem;
+	}
+}
+
+
+@media (max-width: 767px){
+	nav,
+	.bottom_menu{
+		display: none;
+	}
+
+	.assortment .cats .row{
+		flex-wrap: wrap;
+	}
+
+	.header{
+		padding-bottom: 7rem;
+		.links-search .qsearch{
+			position: absolute;
+			right: 180px;
+			#search{
+				width: 400px;
+			}
+		}
+	}
+}
+
+
+
+@media (max-width: 690px){
+	.header{
+		.flexbox{
+			display: block;
+			.logo{
+				padding-left: 0;
+				text-align: center;
+				a{
+					// display: inline !important;
+				}
+				.tel-email{
+					margin-left: 0;
+					text-align: center;
+					width: auto;
+				}
+			}
+		}
+		.links-search .qsearch{
+			#search{
+				// width: 300px;
+			}
+		}
+	}
+}
+
+
+@media (max-width: 400px){
+	.populars{
+		text-align: center;
+		.flexbox{
+			display: block;
+		}
+	}
+
+	footer{
+		.flexbox{
+			display: block;
+			text-align: center;
+			.left{
+				margin-bottom: 2rem;
+			}
+			.right{
+				text-align: center;
+			}
+		}
+	}
+}
