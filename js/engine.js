@@ -74,7 +74,49 @@ $(document).ready(function(){
 		}
 	});
 
+	$(window).resize(function(){
+		if ($('body').width() > 640) {
+			$('body').removeClass('o-menu');
+			$('#navbar').css('height', 'auto');
+		}
+	});
+
+	// mobile-menu
+	$('#navbar').each(function(){
+		var $this = $(this),
+			$link = $('.navbar-toggle'),
+			$close = $('.close-menu'),
+
+			init = function(){
+				$link.on('click', openMenu);
+				$close.on('click', closeMenu);
+			},
+			openMenu = function(e){
+				e.preventDefault();
+				h = $(document).height();
+				$('body').addClass('o-menu');
+				$('#navbar').height(h);
+
+			},
+			closeMenu = function(e){
+				e.preventDefault();
+				$('body').removeClass('o-menu');
+				$('#navbar').height('auto');
+			};
+		init();
+	});	
+
+
 });
+
+$(document).on('click','.o-menu #navbar .folder > span', function(e){   
+	// e.preventDefault();
+	var $this = $(this);
+	$this.next('ul').slideToggle();
+	$this.parent().toggleClass('open');
+	return false;
+});
+
 
 // =заглушка для IE
 //event listener: DOM ready

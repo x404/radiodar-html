@@ -236,6 +236,12 @@ strong{
 }
 
 
+.navbar-toggle,
+.close-menu{
+	display: none;
+}
+
+
 @mixin sprite($x:0, $y:0){
 	background-image: url(../images/sprite.png);
 	background-repeat: no-repeat;
@@ -276,6 +282,10 @@ strong{
 	cursor: pointer;
 }
 
+
+.show-sm{
+	display: none;
+}
 
 .bottomline{
 	margin-bottom: 2rem;
@@ -371,10 +381,10 @@ header{
 				padding-left: 37px;
 				&:before{
 					background-position: -50px -45px;
+					bottom: 2px;
 					height: 23px;
-					width: 24px;
 					left: 0;
-					bottom: -6px;
+					width: 24px;
 				}
 			}
 
