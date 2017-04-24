@@ -1752,18 +1752,13 @@ main table td {
   .show-sm .links a:hover {
     text-decoration: underline;
   }
-  .assortment .cats .row {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-  }
   .header {
     padding-bottom: 3rem;
   }
   .header .links-search .qsearch {
     position: absolute;
     left: 35px;
-    top: 100px;
+    top: 117px;
   }
   .header .links-search .qsearch #search {
     width: 400px;
@@ -1835,9 +1830,9 @@ main table td {
     color: #d10707;
     display: block;
     left: 0;
+    padding-top: 15px;
     position: absolute;
     top: 0;
-    padding-top: 15px;
     -webkit-transform: translate(-305px, 0);
         -ms-transform: translate(-305px, 0);
             transform: translate(-305px, 0);
@@ -1853,8 +1848,18 @@ main table td {
     margin-top: 0;
     padding-left: 15px;
   }
-  #navbar ul.mainnav > li.folder > a:after {
-    top: 22px !important;
+  #navbar ul.mainnav ul {
+    position: static;
+    opacity: 1;
+    background: none;
+    font-size: 14px !important;
+  }
+  #navbar ul.mainnav ul li:after {
+    top: 12px;
+  }
+  #navbar ul.mainnav > li.folder > a:after,
+  #navbar ul.mainnav > li.folder > span:after {
+    top: 24px !important;
   }
   #navbar ul.mainnav > li.active > a {
     text-decoration: underline;
@@ -1868,8 +1873,8 @@ main table td {
     height: auto;
     line-height: normal;
     padding: 18px 0 18px 10px;
-    text-transform: none;
     text-decoration: none;
+    text-transform: none;
   }
   #navbar ul.mainnav li a:hover, #navbar ul.mainnav li span:hover {
     color: #fff;
@@ -1882,10 +1887,12 @@ main table td {
   #navbar ul.mainnav li.active a, #navbar ul.mainnav li.active span, #navbar ul.mainnav li:hover a, #navbar ul.mainnav li:hover span {
     background: none;
   }
-  #navbar ul.mainnav li.folder > a {
+  #navbar ul.mainnav li.folder > a,
+  #navbar ul.mainnav li.folder > span {
     position: relative;
   }
-  #navbar ul.mainnav li.folder > a:after {
+  #navbar ul.mainnav li.folder > a:after,
+  #navbar ul.mainnav li.folder > span:after {
     background: url(../images/arrow.png) no-repeat left bottom;
     content: "";
     display: block;
@@ -1898,10 +1905,32 @@ main table td {
   #navbar ul.mainnav li.folder ul.show {
     display: block;
   }
-  #navbar ul.mainnav li.folder.open > a:after {
+  #navbar ul.mainnav li.folder.open > a:after,
+  #navbar ul.mainnav li.folder.open > span:after {
     background-position: left top;
     width: 12px;
     height: 8px;
+  }
+  #navbar ul.mainnav li.folder .folder {
+    padding-left: .5rem;
+    padding-right: 0;
+  }
+  #navbar ul.mainnav li.folder .folder > a:after,
+  #navbar ul.mainnav li.folder .folder > span:after {
+    display: none;
+  }
+  #navbar ul.mainnav li.folder .folder li ul li {
+    position: relative;
+  }
+  #navbar ul.mainnav li.folder .folder li ul li a:before {
+    content: "-";
+    z-index: 10;
+    position: absolute;
+    left: 4px;
+    top: 8px;
+  }
+  #navbar ul.mainnav li.folder .folder li ul.folder > ul {
+    display: none !important;
   }
   #navbar ul.mainnav li.active a:hover {
     color: #fff;
@@ -1916,20 +1945,34 @@ main table td {
   #navbar ul.mainnav li ul {
     display: none;
     font-size: 12px;
+    width: auto !important;
+    border-top: none;
   }
   #navbar ul.mainnav li ul li {
     border-bottom: none;
     padding-left: 7px;
   }
   #navbar ul.mainnav li ul li a, #navbar ul.mainnav li ul li span {
-    padding: 7px 0 7px 10px;
+    padding: 10px 0 10px 10px;
   }
   #navbar ul.mainnav li ul li.active, #navbar ul.mainnav li ul li:hover {
     border-bottom: none;
     color: #d10707;
   }
-  #navbar ul.mainnav li#nav4 > a:after, #navbar ul.mainnav li#nav5 > a:after {
+  #navbar ul.mainnav li ul li ul {
+    padding-top: 0;
+  }
+  #navbar ul.mainnav li ul li ul li {
+    padding-right: 0;
+  }
+  #navbar ul.mainnav li ul li ul li:hover {
     background: none;
+  }
+  #navbar ul.mainnav li ul li ul li.folder.active > a {
+    text-decoration: underline;
+  }
+  #navbar ul.mainnav li ul li ul li ul li.active a {
+    text-decoration: underline;
   }
 }
 
@@ -1955,7 +1998,7 @@ main table td {
   }
   .header .links-search .qsearch {
     padding-top: 0;
-    margin-top: 0;
+    margin-top: 2rem;
     position: static;
   }
   .header .links-search .qsearch form fieldset {
@@ -1995,6 +2038,9 @@ main table td {
   .populars .flexbox {
     display: block;
   }
+  .header .links-search .qsearch {
+    margin-top: 0;
+  }
   .header .links-search .qsearch #search {
     width: calc(100% - 60px);
   }
@@ -2032,6 +2078,9 @@ main table td {
   .aside-content .content {
     width: 768px;
   }
+  .catalog .tooltip {
+    padding: 5rem 1rem .7rem;
+  }
 }
 
 @media (max-width: 1149px) {
@@ -2062,6 +2111,18 @@ main table td {
   }
   .assortment .cats .row a:nth-child(6) {
     display: none;
+  }
+  .catalog .tooltip {
+    padding: 8.5rem 1rem .7rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .result-search .flexbox {
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
   }
 }
 
@@ -2106,6 +2167,12 @@ main table td {
     margin-left: 0;
     margin-top: 2rem;
   }
+  .catalog .tooltip {
+    padding: 5rem 1rem .7rem;
+  }
+  .catalog .tooltip p {
+    line-height: 1.1;
+  }
 }
 
 @media (max-width: 920px) {
@@ -2121,12 +2188,48 @@ main table td {
   .aside-content aside {
     display: none;
   }
+  .catalog .tooltip {
+    padding: 5.5rem 1rem .7rem;
+  }
+  .catalog .tooltip p {
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 736px) {
+  .assortment .cats .row a {
+    margin-left: .4rem;
+  }
+  .result-search .flexbox .item {
+    width: 205px;
+  }
+}
+
+@media (max-width: 705px) {
+  .result-search .flexbox .item {
+    width: 185px;
+  }
 }
 
 @media (max-width: 675px) {
   #foo1 .slide {
     height: auto;
     min-height: 200px;
+  }
+}
+
+@media (max-width: 667px) {
+  .assortment .cats .row a img {
+    max-width: 100%;
+  }
+  .card .pic {
+    text-align: center;
+  }
+}
+
+@media (max-width: 645px) {
+  .result-search .flexbox .item {
+    width: 165px;
   }
 }
 
@@ -2143,6 +2246,26 @@ main table td {
     -webkit-flex-basis: 50%;
         -ms-flex-preferred-size: 50%;
             flex-basis: 50%;
+  }
+  .card .pic img {
+    max-width: 100%;
+  }
+  .assortment .cats .row {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 590px) {
+  .result-search .flexbox {
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+  }
+  .result-search .flexbox .item {
+    width: 215px;
   }
 }
 
@@ -2197,5 +2320,15 @@ main table td {
 @media (max-width: 420px) {
   #foo1 {
     display: none;
+  }
+  .catalog .tooltip p:first-child {
+    overflow: hidden;
+    height: 90px;
+  }
+}
+
+@media (max-width: 360px) {
+  .catalog .tooltip p:first-child {
+    height: 140px;
   }
 }

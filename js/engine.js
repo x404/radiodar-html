@@ -109,7 +109,7 @@ $(document).ready(function(){
 
 });
 
-$(document).on('click','.o-menu #navbar .folder > span', function(e){   
+$(document).on('click','.o-menu #navbar .folder > span, .o-menu #navbar .folder > a', function(e){   
 	// e.preventDefault();
 	var $this = $(this);
 	$this.next('ul').slideToggle();

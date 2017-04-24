@@ -87,23 +87,24 @@
 	<!-- =/header -->
 	
 	
+	
 	<!-- =nav -->
-	<nav>
+	<nav id="navbar">
 		<div class="container">
 			<ul class="mainnav">
 				<li><a href="/company/" title="">О компании</a></li>
 				<li><a href="#" title="">Новости</a></li>
-				<li>
+				<li class="folder">
 					<span>Каталог</span>
 					<ul>
-						<li>
+						<li class="folder">
 							<span>Импортные компоненты</span>
 							<ul>
 								<li><a href="#" title="">Акустические компоненты</a></li>
 								<li><a href="#" title="">Антенны</a></li>
 								<li><a href="#" title="">Вентиляторы</a></li>
 								<li><a href="#" title="">Видеонаблюдение и безопасность</a></li>
-								<li class="active">
+								<li class="folder active">
 									<a href="#" title="">Датчики</a>
 									<ul>
 										<li><a href="#" title="">Датчики движения</a></li>
@@ -130,14 +131,14 @@
 								<li><a href="#" title="">Разъемы</a></li>
 							</ul>
 						</li>
-						<li>
+						<li class="folder">
 							<span>Отечественные компоненты</span>
 							<ul>
 								<li><a href="#">Акустические компоненты</a></li>
 								<li><a href="#">Вентиляторы</a></li>
 								<li><a href="#">Датчики</a></li>
 								<li><a href="#">Диоды</a></li>
-								<li class="active">
+								<li class="folder active">
 									<a href="#">Измерительные приборы</a>
 									<ul>
 										<li><a href="#" title="">Анализаторы спектра</a></li>
@@ -184,8 +185,24 @@
 				<li><a href="/warranty/" title="">Гарантия</a></li>
 				<!-- <li><a href="#" title="">Кабинет</a></li> -->
 			</ul>
+			<div class="show-sm">
+				<a href="tel:+74957788786" class="tel">+7 (495) 778 87 86</a>
+				<a href="mailto:инфо@радиодар.рф" class="email">инфо@радиодар.рф</a>	
+				<div class="links">
+					<a href="#" title="" class="link-address">Наш адрес</a>
+					<a href="#" title="" class="link-delivery">Доставка</a>
+					<a href="#" title="" class="link-payment">Оплата</a>
+				</div>
+			</div>
 		</div>
 	</nav>
+
+	<button type="button" class="navbar-toggle">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+	<button type="button" class="close-menu"><img src="/images/close-modal.png" alt=""></button>
 	<!-- =/nav -->
 	
 	<div class="main">
@@ -244,6 +261,41 @@
 			</div>
 		</section>
 		<!-- =/partners -->
+
+		<!-- =contacts -->
+		<section class="contacts">
+			<div class="container">
+				<h1 class="bottomline">Контактная информация</h1>
+				<div class="flexbox">
+					<div class="map">
+						<div id="map">
+		<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A59ebaa555a9580e7acee37134a864e1a5bfda9dd777442de36cd1b8f09aa83d1&amp;width=100%25&amp;height=250&amp;lang=ru_UA&amp;scroll=true"></script>
+						</div>
+						<p>
+							<a href="#" class="more more-white">Перейти на страницу контакты</a>
+						</p>
+					</div>
+					<div class="text">
+						<p>Московская обл., г.Королев, пр-д. Циолковского д.5 (вход в "Pallada сервис") </p>
+
+						<p>
+							+7 (495) 778-87-86 <br>
+							+7 (968) 836-93-78  <br>
+							+7 (903) 625-51-02	 <br>
+							<a href="mailto:инфо@радиодар.рф">инфо@радиодар.рф</a>
+						</p>
+
+						<p><strong>Доставка заказов:</strong></p>
+						<p>
+							По субботам - на митинский радиорынок. <br>
+							С понедельника по пятницу возможна доставка заказов по Москве и московской области. <br>
+							Доставка в другие регионы России осуществляется транспртной компанией на Ваш выбор. 
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- =/contacts -->
 
 		<!-- =menu -->
 		<div class="bottom_menu">

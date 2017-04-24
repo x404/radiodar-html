@@ -57,17 +57,13 @@
 		}
 	}
 
-	.assortment .cats .row{
-		flex-wrap: wrap;
-	}
-
 	.header{
 		padding-bottom: 3rem;
 		.links-search{
 			.qsearch{
 				position: absolute;
 				left: 35px;
-				top: 100px;
+				top: 117px;
 				#search{
 					width: 400px;
 				}
@@ -139,11 +135,7 @@
 		top: 0;
 		width: 70px;
 		z-index: 99;
-		&:hover{
-			// background-color: $color2;
-		}
 	}
-
 
 
 	#navbar{
@@ -152,9 +144,9 @@
 		color: $color5;
 		display: block;
 		left: 0;
+		padding-top: 15px;
 		position: absolute;
 		top: 0;
-		padding-top: 15px;
 		transform: translate(-305px, 0);
 		width: 230px;
 		.container{
@@ -166,15 +158,26 @@
 			font-size: 15px;
 			margin-top: 0;
 			padding-left: 15px;
-			& > li.folder > a{
+			ul{
+				position: static; 
+				opacity: 1;
+				background: none;
+				font-size: 14px !important;
+				li:after{
+					top: 12px;
+				}
+			}
+			& > li.folder > a,
+			& > li.folder > span
+			{
 				&:after{
-					top: 22px !important;
+					top: 24px !important;
 				}
 			}
 			& > li.active > a{
 				text-decoration: underline;				
 			}
-			li{
+			li{ // 1 level
 				border-bottom: 1px solid #fff;
 				a, span{
 					color: $color2;
@@ -182,8 +185,8 @@
 					height: auto;
 					line-height: normal;
 					padding: 18px 0 18px 10px;
-					text-transform: none;
 					text-decoration: none;
+					text-transform: none;
 					&:hover{
 						color: #fff;
 						text-decoration: underline;
@@ -199,7 +202,8 @@
 				}
 
 				&.folder{
-					& > a{
+					& > a,
+					& > span{
 						position: relative;
 						&:after{
 							background: url(../images/arrow.png) no-repeat left bottom;
@@ -215,12 +219,43 @@
 					ul.show{
 						display: block;
 					}
-					&.open > a{
+					&.open > a,
+					&.open > span{
 						&:after{
 							background-position: left top;
 							width: 12px;
 							height: 8px;
 						}						
+					}
+
+					.folder{ // 2 level
+						padding-left: .5rem;
+						padding-right: 0;
+						& > a,
+						& > span{
+							&:after{
+								display: none;
+							}
+						}
+						li{
+							ul{
+								li{
+									position: relative;
+									a:before{
+										content: "-";
+										z-index: 10;
+										position: absolute;
+										left: 4px;
+										top: 8px;
+									}
+								}
+								&.folder{
+									& > ul{
+										display: none !important;										
+									}
+								}
+							}
+						}
 					}
 				}
 
@@ -246,11 +281,13 @@
 				ul{
 					display: none;
 					font-size: 12px;
+					width: auto !important;
+					border-top: none;
 					li{
 						border-bottom: none;
 						padding-left: 7px;
 						a, span{
-							padding: 7px 0 7px 10px;
+							padding: 10px 0 10px 10px;
 
 						}
 						&.active,
@@ -258,17 +295,31 @@
 							border-bottom: none;
 							color: $color5;
 						}
-					}
-				}
 
-				&#nav4,
-				&#nav5{
-					> a{
-						&:after{
-							background: none;
+						ul{ // 2level
+							padding-top: 0;
+							li{
+								padding-right: 0;
+								&:hover{
+									background: none;
+								}
+								&.folder.active > a{
+									text-decoration: underline;
+								}
+								ul{
+									li{
+										&.active{
+											a{
+												text-decoration: underline;
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
+
 			}
 		}
 	}
@@ -293,12 +344,11 @@
 			}
 		}
 		.links-search{
-			// margin-top: 2rem;
 			text-align: center;
 			width: 100%;
 			.qsearch{
 				padding-top: 0;
-				margin-top: 0;
+				margin-top: 2rem;
 				position: static;
 				form{
 					fieldset{
@@ -350,7 +400,7 @@
 	.header .links-search{
 		// padding-top: 0;
 		.qsearch{
-			// margin-top: 0;
+			margin-top: 0;
 			#search{
 				width: calc(100% - 60px);
 			}
